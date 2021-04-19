@@ -17,6 +17,10 @@ we have also added to this project **build tags**  to avoid running integration 
 
 # To Run the Tests
 ```
+make test
+```
+Or
+```
  cd integration 
  go test -tags integration
 ```
