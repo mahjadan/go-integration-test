@@ -6,6 +6,10 @@ This is a demo API to show how to use **dockertest** for writing integrations te
 this API has 2 end-points :
 * /planets/:id (which makes a call to Star War API and get a specific Planet Info)
 * /people/:id  (which access MongoDB and retreive a sample document)
+## Features of this test
+* The ability to make one container communicate with another, and this is done by creating shared Network between the containers.
+* Ability to see the logs of the API for better debuging.
+* Cleaning up the resources used after all the tests are finished ( shutdown containers and remove network,volumes )
 
 the idea is to write integration test using docker container package 'dockertest' which will start 3 containers:
 1. **wiremock** container to mock the external API call ( Star War in our example)
