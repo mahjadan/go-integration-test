@@ -17,7 +17,7 @@ func TestShouldReturnMockedResponseFromWiremock(t *testing.T) {
 
 	var planet Planet
 
-	request,err := http.NewRequest(http.MethodGet, url, nil)
+	request, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		t.Fail()
 	}
@@ -27,7 +27,7 @@ func TestShouldReturnMockedResponseFromWiremock(t *testing.T) {
 
 	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, resp.StatusCode)
-	bytes,_ := ioutil.ReadAll(resp.Body)
+	bytes, _ := ioutil.ReadAll(resp.Body)
 
 	err = json.Unmarshal(bytes, &planet)
 	fmt.Println(planet)
@@ -35,14 +35,14 @@ func TestShouldReturnMockedResponseFromWiremock(t *testing.T) {
 
 }
 
-type Planet struct{
-	Name string
+type Planet struct {
+	Name            string
 	Rotation_period string
-	Orbital_period string
-	Diameter string
-	Climate string
-	Gravity string
-	Terrain string
-	Surface_water string
-	Population string
+	Orbital_period  string
+	Diameter        string
+	Climate         string
+	Gravity         string
+	Terrain         string
+	Surface_water   string
+	Population      string
 }
