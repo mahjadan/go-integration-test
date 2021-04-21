@@ -15,17 +15,7 @@ func TestShouldReturnMockedResponseFromWiremock(t *testing.T) {
 	url := "http://localhost:" + appPort + "/planets/1"
 	fmt.Println("calling application on : ", url)
 
-	var planet struct{
-		Name string
-		Rotation_period string
-		Orbital_period string
-		Diameter string
-		Climate string
-		Gravity string
-		Terrain string
-		Surface_water string
-		Population string
-	}
+	var planet Planet
 
 	request,err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
@@ -43,4 +33,16 @@ func TestShouldReturnMockedResponseFromWiremock(t *testing.T) {
 	fmt.Println(planet)
 	assert.Nil(t, err)
 
+}
+
+type Planet struct{
+	Name string
+	Rotation_period string
+	Orbital_period string
+	Diameter string
+	Climate string
+	Gravity string
+	Terrain string
+	Surface_water string
+	Population string
 }
