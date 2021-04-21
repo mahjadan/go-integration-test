@@ -70,7 +70,6 @@ func startMongoDB(pool *dockertest.Pool, mongoVersion string, network *dockertes
 		fmt.Printf("Could not start Mongodb: %v \n", err)
 		return r, err
 	}
-
 	mongoPort := r.GetPort("27017/tcp")
 
 	fmt.Printf("mongo-%s - connecting to : %s \n", mongoVersion, fmt.Sprintf("mongodb://localhost:%s", mongoPort))
